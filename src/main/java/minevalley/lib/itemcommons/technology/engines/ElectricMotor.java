@@ -1,16 +1,16 @@
-package minevalley.lib.template.gadgets;
+package minevalley.lib.itemcommons.technology.engines;
 
-import minevalley.lib.template.abstracts.NonSkullItem;
+import minevalley.lib.itemcommons.abstracts.SkullItem;
 import net.kyori.adventure.text.TextComponent;
-import org.bukkit.Material;
 
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("unused")
-public class Wallet implements NonSkullItem {
+public enum ElectricMotor implements SkullItem {
+    ;
 
     @Override
-    public @Nonnull Material material() {
+    public @Nonnull String skullTexture() {
         throw new UnsupportedOperationException("Not implemented yet");
     }
 

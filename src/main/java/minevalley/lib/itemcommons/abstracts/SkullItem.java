@@ -1,4 +1,4 @@
-package minevalley.lib.template.abstracts;
+package minevalley.lib.itemcommons.abstracts;
 
 import org.jetbrains.annotations.Contract;
 

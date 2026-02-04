@@ -1,4 +1,4 @@
-package minevalley.lib.template.abstracts;
+package minevalley.lib.itemcommons.abstracts;
 
 import net.kyori.adventure.text.TextComponent;
 import org.jetbrains.annotations.Contract;
