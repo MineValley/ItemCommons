@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>minevalley.author</groupId>
-    <artifactId>template</artifactId>
+    <groupId>minevalley.lib</groupId>
+    <artifactId>itemcommons</artifactId>
     <version>0.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Template</name>
-    <description>Module-Template zur vereinfachten Erstellung neuer Module</description>
+    <name>ItemCommons</name>
+    <description>Sammlung aller Modul-übergreifenden Items und Crafting-Rezepte</description>
 
     <properties>
         <java.version>21</java.version>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>minevalley.core</groupId>
             <artifactId>api</artifactId>
-            <version>1.299.6</version>
+            <version>1.300.8</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
