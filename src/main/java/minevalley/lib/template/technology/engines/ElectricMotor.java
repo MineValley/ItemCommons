@@ -1,4 +1,4 @@
-package minevalley.lib.template.electronics.engines;
+package minevalley.lib.template.technology.engines;
 
 import minevalley.lib.template.abstracts.SkullItem;
 import net.kyori.adventure.text.TextComponent;
@@ -6,7 +6,7 @@ import net.kyori.adventure.text.TextComponent;
 import javax.annotation.Nonnull;
 
 @SuppressWarnings("unused")
-public enum CombustionEngine implements SkullItem {
+public enum ElectricMotor implements SkullItem {
     ;
 
     @Override
