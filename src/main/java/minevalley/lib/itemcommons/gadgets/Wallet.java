@@ -11,8 +11,10 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
 @RequiredArgsConstructor
@@ -47,5 +49,23 @@ public class Wallet implements NonSkullItem, CustomModelDataItem {
     public @Nonnull ItemStack asItemStack() {
         return Core.createItem(material()).setDisplayName(displayName()).setLore(lore())
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING).build();
+    }
+
+    @Contract(value = "null -> false", pure = true)
+    public static boolean isWallet(@Nullable ItemStack stack) {
+        if (stack == null) return false;
+        return isOpenWallet(stack) || isClosedWallet(stack);
+    }
+
+    @Contract(value = "null -> false", pure = true)
+    public static boolean isOpenWallet(@Nullable ItemStack stack) {
+        if (stack == null) return false;
+        return new Wallet(true).asItemStack().isSimilar(stack);
+    }
+
+    @Contract(value = "null -> false", pure = true)
+    public static boolean isClosedWallet(@Nullable ItemStack stack) {
+        if (stack == null) return false;
+        return new Wallet(false).asItemStack().isSimilar(stack);
     }
 }
