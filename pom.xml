@@ -123,4 +123,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub MineValley Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/MineValley/ItemCommons</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </distributionManagement>
 </project>
