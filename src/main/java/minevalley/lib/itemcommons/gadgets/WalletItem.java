@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
 @RequiredArgsConstructor
-public class Wallet implements NonSkullItem, CustomModelDataItem {
+public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     private final boolean open;
 
@@ -60,12 +60,12 @@ public class Wallet implements NonSkullItem, CustomModelDataItem {
     @Contract(value = "null -> false", pure = true)
     public static boolean isOpenWallet(@Nullable ItemStack stack) {
         if (stack == null) return false;
-        return new Wallet(true).asItemStack().isSimilar(stack);
+        return new WalletItem(true).asItemStack().isSimilar(stack);
     }
 
     @Contract(value = "null -> false", pure = true)
     public static boolean isClosedWallet(@Nullable ItemStack stack) {
         if (stack == null) return false;
-        return new Wallet(false).asItemStack().isSimilar(stack);
+        return new WalletItem(false).asItemStack().isSimilar(stack);
     }
 }
