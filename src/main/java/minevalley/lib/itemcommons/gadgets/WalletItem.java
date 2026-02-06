@@ -20,6 +20,14 @@ import javax.annotation.Nullable;
 @RequiredArgsConstructor
 public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
+    public static @Nonnull TextComponent DISPLAY_NAME = Component.text("Geldbeutel", TextColor.color(156, 77, 20));
+    public static @Nonnull TextComponent[] LORE = new TextComponent[]{
+            Component.text("Bewahre dein Bargeld und deine Bankkarten sicher auf!", NamedTextColor.GRAY),
+            Component.text("Wenn du stirbst, können andere Spieler Teile deines Bargelds stehlen!", NamedTextColor.RED)
+    };
+    public static final int CUSTOM_MODEL_DATA_OPEN = 11;
+    public static final int CUSTOM_MODEL_DATA_CLOSED = 12;
+
     private final boolean open;
 
     @Override
@@ -29,20 +37,17 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull TextComponent displayName() {
-        return Component.text("Geldbeutel", TextColor.color(156, 77, 20));
+        return DISPLAY_NAME;
     }
 
     @Override
     public @Nonnull TextComponent[] lore() {
-        return new TextComponent[]{
-                Component.text("Bewahre dein Bargeld und deine Bankkarten sicher auf!", NamedTextColor.GRAY),
-                Component.text("Wenn du stirbst, können andere Spieler Teile deines Bargelds stehlen!", NamedTextColor.RED)
-        };
+        return LORE;
     }
 
     @Override
     public int customModelData() {
-        return open ? 11 : 12;
+        return open ? CUSTOM_MODEL_DATA_OPEN : CUSTOM_MODEL_DATA_CLOSED;
     }
 
     @Override
