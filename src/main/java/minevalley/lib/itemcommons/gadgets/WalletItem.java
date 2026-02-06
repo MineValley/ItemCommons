@@ -9,7 +9,9 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Contract;
 
@@ -20,10 +22,16 @@ import javax.annotation.Nullable;
 @RequiredArgsConstructor
 public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
-    public static @Nonnull TextComponent DISPLAY_NAME = Component.text("Geldbeutel", TextColor.color(156, 77, 20));
+    public static @Nonnull TextComponent DISPLAY_NAME =
+            Component.text("Geldbeutel", TextColor.color(156, 77, 20))
+                    .decoration(TextDecoration.ITALIC, false);
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
-            Component.text("Bewahre dein Bargeld und deine Bankkarten sicher auf!", NamedTextColor.GRAY),
-            Component.text("Wenn du stirbst, können andere Spieler Teile deines Bargelds stehlen!", NamedTextColor.RED)
+            Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
+                    .decoration(TextDecoration.ITALIC, false),
+            Component.text("Wenn du stirbst, können andere Spieler", NamedTextColor.RED)
+                    .decoration(TextDecoration.ITALIC, false),
+            Component.text("Teile deines Bargelds stehlen!", NamedTextColor.RED)
+                    .decoration(TextDecoration.ITALIC, false)
     };
     public static final int CUSTOM_MODEL_DATA_OPEN = 11;
     public static final int CUSTOM_MODEL_DATA_CLOSED = 12;
@@ -53,7 +61,9 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
     @Override
     public @Nonnull ItemStack asItemStack() {
         return Core.createItem(material()).setDisplayName(displayName()).setLore(lore())
-                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING).build();
+                .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
+                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
+                .setCustomModelData(customModelData()).build();
     }
 
     @Contract(value = "null -> false", pure = true)
