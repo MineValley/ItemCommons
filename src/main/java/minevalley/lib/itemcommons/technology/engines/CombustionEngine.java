@@ -30,4 +30,8 @@ public enum CombustionEngine implements SkullItem {
     public @Nonnull ItemStack asItemStack() {
         return Core.createItem(skullTexture()).setDisplayName(displayName()).setLore(lore()).build();
     }
+
+    public static void registerRecipes() {
+        // logic for registering recipes will go here
+    }
 }
