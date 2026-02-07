@@ -19,14 +19,10 @@ import javax.annotation.Nonnull;
 public class PhoneItem implements NonSkullItem, CustomModelDataItem {
 
     public static @Nonnull TextComponent DISPLAY_NAME =
-            Component.text("Geldbeutel", TextColor.color(156, 77, 20))
+            Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
-            Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
-                    .decoration(TextDecoration.ITALIC, false),
-            Component.text("Wenn du stirbst, können andere Spieler", NamedTextColor.RED)
-                    .decoration(TextDecoration.ITALIC, false),
-            Component.text("Teile deines Bargelds stehlen!", NamedTextColor.RED)
+            Component.text("Installiere dir Apps und kommuniziere mit Freunden", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false)
     };
 
