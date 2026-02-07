@@ -1,4 +1,4 @@
-package minevalley.lib.itemcommons.gadgets;
+package minevalley.lib.itemcommons.gadgets.phone;
 
 import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
@@ -10,6 +10,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -18,6 +19,7 @@ import javax.annotation.Nonnull;
 @RequiredArgsConstructor
 public class PhoneItem implements NonSkullItem, CustomModelDataItem {
 
+    public static Material MATERIAL = Material.FIREWORK_STAR;
     public static @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
@@ -25,35 +27,36 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
             Component.text("Installiere dir Apps und kommuniziere mit Freunden", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false)
     };
+    private final PhoneScreen screen;
 
     @Override
     public @Nonnull Material material() {
-        return Material.WOLF_ARMOR;
+        return MATERIAL;
     }
 
     @Override
     public @Nonnull TextComponent displayName() {
-        return null;
+        return DISPLAY_NAME;
     }
 
     @Override
     public @Nonnull TextComponent[] lore() {
-        return new TextComponent[0];
+        return LORE;
     }
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(material())
+        return Core.createItem(MATERIAL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .setCustomModelData(customModelData())
-                .setEquippable(null)
+                .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .setMaxStackSize(1)
                 .build();
     }
 
     @Override
     public int customModelData() {
-        return 0;
+        return screen.getCustomModelData();
     }
 }
