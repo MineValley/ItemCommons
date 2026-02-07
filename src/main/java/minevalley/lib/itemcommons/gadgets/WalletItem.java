@@ -40,7 +40,7 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull Material material() {
-        return Material.GOLDEN_SWORD;
+        return Material.NETHER_STAR;
     }
 
     @Override
