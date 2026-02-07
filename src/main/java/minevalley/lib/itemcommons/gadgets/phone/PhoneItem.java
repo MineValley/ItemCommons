@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 @RequiredArgsConstructor
 public class PhoneItem implements NonSkullItem, CustomModelDataItem {
 
-    public static Material MATERIAL = Material.FIREWORK_STAR;
+    public static @Nonnull Material MATERIAL = Material.FIREWORK_STAR;
     public static @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
