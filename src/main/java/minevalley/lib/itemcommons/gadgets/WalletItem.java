@@ -60,8 +60,8 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(material()).setDisplayName(displayName())
-                .setLore(lore())
+        return Core.createItem(material()).setDisplayName(DISPLAY_NAME)
+                .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setCustomModelData(customModelData())
