@@ -22,6 +22,7 @@ import javax.annotation.Nullable;
 @RequiredArgsConstructor
 public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
+    public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
     public static @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Geldbeutel", TextColor.color(158, 95, 49))
                     .decoration(TextDecoration.ITALIC, false);
@@ -40,7 +41,7 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull Material material() {
-        return Material.NETHER_STAR;
+        return MATERIAL;
     }
 
     @Override
