@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     public static @Nonnull TextComponent DISPLAY_NAME =
-            Component.text("Geldbeutel", TextColor.color(156, 77, 20))
+            Component.text("Geldbeutel", TextColor.color(158, 95, 49))
                     .decoration(TextDecoration.ITALIC, false);
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
             Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
