@@ -27,7 +27,9 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
             Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
-            Component.text("Installiere dir Apps und kommuniziere mit Freunden", NamedTextColor.GRAY)
+            Component.text("Installiere dir Apps und", NamedTextColor.GRAY)
+                    .decoration(TextDecoration.ITALIC, false),
+            Component.text("kommuniziere mit Freunden", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false)
     };
     private final PhoneScreen screen;
