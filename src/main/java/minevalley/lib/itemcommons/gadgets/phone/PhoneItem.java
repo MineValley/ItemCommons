@@ -56,7 +56,7 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .setCustomModelData(customModelData())
-                .addItemFlags(ItemFlag.HIDE_DYE)
+                .addItemFlags(ItemFlag.HIDE_ENCHANTS)
                 .setMaxStackSize(1)
                 .build();
         final FireworkEffectMeta meta = (FireworkEffectMeta) item.getItemMeta();
