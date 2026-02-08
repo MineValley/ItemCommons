@@ -2,6 +2,7 @@ package minevalley.lib.itemcommons.gadgets.phone;
 
 import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
+import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.lib.itemcommons.abstracts.CustomModelDataItem;
 import minevalley.lib.itemcommons.abstracts.NonSkullItem;
 import net.kyori.adventure.text.Component;
@@ -57,6 +58,7 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                 .setLore(LORE)
                 .setCustomModelData(customModelData())
                 .addItemFlags(ItemFlag.HIDE_ENCHANTS)
+                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setMaxStackSize(1)
                 .build();
         final FireworkEffectMeta meta = (FireworkEffectMeta) item.getItemMeta();
