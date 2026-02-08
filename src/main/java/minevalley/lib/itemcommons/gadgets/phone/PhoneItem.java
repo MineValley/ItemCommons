@@ -9,9 +9,12 @@ import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Color;
+import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.FireworkEffectMeta;
 
 import javax.annotation.Nonnull;
 
@@ -28,6 +31,7 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                     .decoration(TextDecoration.ITALIC, false)
     };
     private final PhoneScreen screen;
+    private final Color color;
 
     @Override
     public @Nonnull Material material() {
@@ -46,13 +50,17 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(MATERIAL)
+        final ItemStack item = Core.createItem(MATERIAL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .setCustomModelData(customModelData())
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .setMaxStackSize(1)
                 .build();
+        final FireworkEffectMeta meta = (FireworkEffectMeta) item.getItemMeta();
+        meta.setEffect(FireworkEffect.builder().withColor(color).build());
+        item.setItemMeta(meta);
+        return item;
     }
 
     @Override
