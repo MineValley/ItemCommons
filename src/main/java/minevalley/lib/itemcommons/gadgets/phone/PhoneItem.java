@@ -57,7 +57,7 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .setCustomModelData(customModelData())
-                .addItemFlags(ItemFlag.HIDE_ENCHANTS)
+                .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setMaxStackSize(1)
                 .build();
