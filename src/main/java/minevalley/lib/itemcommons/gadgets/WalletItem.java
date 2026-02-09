@@ -31,9 +31,9 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
             Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false),
-            Component.text("Wenn du stirbst, können andere Spieler", NamedTextColor.RED)
+            Component.text("Wenn du stirbst, können andere Spieler", TextColor.color(171, 90, 79))
                     .decoration(TextDecoration.ITALIC, false),
-            Component.text("Teile deines Bargelds stehlen!", NamedTextColor.RED)
+            Component.text("Teile deines Bargelds stehlen!", TextColor.color(171, 90, 79))
                     .decoration(TextDecoration.ITALIC, false)
     };
     public static final int CUSTOM_MODEL_DATA_OPEN = 11;
