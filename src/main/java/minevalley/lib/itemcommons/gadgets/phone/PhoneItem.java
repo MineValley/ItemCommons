@@ -17,8 +17,11 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
+import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.Objects;
 
 @SuppressWarnings("unused")
 @RequiredArgsConstructor
@@ -63,14 +66,21 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                 .setMaxStackSize(1)
                 .setTooltipStyle(new NamespacedKey("minecraft", "phone"))
                 .build();
-        final FireworkEffectMeta meta = (FireworkEffectMeta) item.getItemMeta();
-        meta.setEffect(FireworkEffect.builder().withColor(color).build());
-        item.setItemMeta(meta);
+        item.editMeta(FireworkEffectMeta.class,
+                meta -> meta.setEffect(FireworkEffect.builder().withColor(color).build()));
         return item;
     }
 
     @Override
     public int customModelData() {
         return screen.getCustomModelData();
+    }
+
+    @Contract(value = "null -> false", pure = true)
+    public static boolean isPhone(@Nullable ItemStack stack) {
+        if (stack == null) return false;
+        return stack.getType() == MATERIAL
+                && stack.hasItemMeta()
+                && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
     }
 }
