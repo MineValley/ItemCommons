@@ -13,6 +13,7 @@ import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.FireworkEffectMeta;
@@ -60,6 +61,7 @@ public class PhoneItem implements NonSkullItem, CustomModelDataItem {
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setMaxStackSize(1)
+                .setTooltipStyle(new NamespacedKey("minecraft", "phone"))
                 .build();
         final FireworkEffectMeta meta = (FireworkEffectMeta) item.getItemMeta();
         meta.setEffect(FireworkEffect.builder().withColor(color).build());

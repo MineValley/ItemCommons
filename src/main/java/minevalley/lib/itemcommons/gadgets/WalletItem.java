@@ -11,6 +11,7 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Contract;
@@ -61,12 +62,14 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(material()).setDisplayName(DISPLAY_NAME)
+        return Core.createItem(material())
+                .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setCustomModelData(customModelData())
                 .setMaxStackSize(1)
+                .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))
                 .build();
     }
 
