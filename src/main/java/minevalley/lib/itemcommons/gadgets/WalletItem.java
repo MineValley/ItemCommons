@@ -26,7 +26,7 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
 
     public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
     public static @Nonnull TextComponent DISPLAY_NAME =
-            Component.text("Geldbeutel", TextColor.color(158, 95, 49))
+            Component.text("Geldbeutel", TextColor.color(171, 109, 63))
                     .decoration(TextDecoration.ITALIC, false);
     public static @Nonnull TextComponent[] LORE = new TextComponent[]{
             Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
