@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@SuppressWarnings("unused")
 public enum PhoneScreen {
     OFF(1),
     HOME(2),
