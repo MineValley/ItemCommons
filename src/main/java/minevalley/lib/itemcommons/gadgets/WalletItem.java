@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.Objects;
 
 @SuppressWarnings("unused")
 @RequiredArgsConstructor
@@ -76,7 +77,9 @@ public class WalletItem implements NonSkullItem, CustomModelDataItem {
     @Contract(value = "null -> false", pure = true)
     public static boolean isWallet(@Nullable ItemStack stack) {
         if (stack == null) return false;
-        return isOpenWallet(stack) || isClosedWallet(stack);
+        return stack.getType() == MATERIAL
+                && stack.hasItemMeta()
+                && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
     }
 
     @Contract(value = "null -> false", pure = true)
