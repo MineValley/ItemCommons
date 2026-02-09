@@ -42,6 +42,16 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>crafting-api</id>
+            <url>https://maven.pkg.github.com/MineValley/CraftingAPI</url>
+            <releases>
+                <updatePolicy>always</updatePolicy>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -56,6 +66,12 @@
             <groupId>minevalley.core</groupId>
             <artifactId>api</artifactId>
             <version>1.302.3</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>minevalley.crafting</groupId>
+            <artifactId>api</artifactId>
+            <version>1.0.1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
