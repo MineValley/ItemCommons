@@ -49,7 +49,7 @@ public class CarWheelItem implements CustomItem {
         return CAR_WHEEL_SPEED_ITEM.clone();
     }
 
-    private static void registerRecipes() {
+    public static void registerRecipes() {
         final CustomRecipe normal = Crafting.createCustomRecipe(CAR_WHEEL_NORMAL_ITEM, new String[]{"AAA", "ABA", "AAA"}, 1_000);
         normal.mapIngredient('A', new RecipeIngredient(Material.SLIME_BALL));
         normal.mapIngredient('B', new RecipeIngredient(CarRimItem.CAR_RIM_ITEM));
