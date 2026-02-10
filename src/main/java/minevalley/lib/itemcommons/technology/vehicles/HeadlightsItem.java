@@ -1,6 +1,7 @@
 package minevalley.lib.itemcommons.technology.vehicles;
 
 import minevalley.core.api.Core;
+import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomRecipe;
@@ -15,8 +16,9 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HeadlightsItem implements CustomItem {
 
-    public static final ItemStack HEADLIGHTS_ITEM = Core.createItem(Material.STONE)
+    public static final ItemStack HEADLIGHTS_ITEM = Core.createItem("b43f9854fe0d9e69302565305fcc6de2ab2b8a39c9a4d6f69f3f68d5b292e7fd")
             .setDisplayName("Scheinwerfer", NamedTextColor.WHITE)
+            .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(16)
             .build();
 

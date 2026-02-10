@@ -1,6 +1,7 @@
 package minevalley.lib.itemcommons.technology.vehicles;
 
 import minevalley.core.api.Core;
+import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomRecipe;
@@ -15,8 +16,9 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class CarRimItem implements CustomItem {
 
-    public static final ItemStack CAR_RIM_ITEM = Core.createItem(Material.STONE)
+    public static final ItemStack CAR_RIM_ITEM = Core.createItem("d70752fc4c37d3a39ee68d88372789ed13192d9785a67fa580143aa81ba0c2a3")
             .setDisplayName("Felge", NamedTextColor.WHITE)
+            .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(4)
             .build();
 

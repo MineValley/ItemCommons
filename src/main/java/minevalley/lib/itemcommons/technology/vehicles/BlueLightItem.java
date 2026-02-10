@@ -15,7 +15,8 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class BlueLightItem implements CustomItem {
 
-    public static final ItemStack BLUE_LIGHT_ITEM = Core.createItem(Material.STONE)
+    public static final ItemStack BLUE_LIGHT_ITEM = Core.createItem(Material.NETHER_STAR)
+            .setCustomModelData(20)
             .setDisplayName("Blaulicht", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

@@ -14,7 +14,8 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HornItem implements CustomItem {
 
-    public static final ItemStack HORN_ITEM = Core.createItem(Material.STONE)
+    public static final ItemStack HORN_ITEM = Core.createItem(Material.NETHER_STAR)
+            .setCustomModelData(9)
             .setDisplayName("Hupe", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();
