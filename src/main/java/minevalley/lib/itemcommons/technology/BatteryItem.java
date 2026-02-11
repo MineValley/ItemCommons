@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -49,16 +49,15 @@ public class BatteryItem implements CustomItem {
     }
 
     public static void registerRecipes() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(getLevel1(),
-                new String[]{"BCB", "BAB", "BIB"}, 0);
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(getLevel1(),
+                new String[]{"BCB", "BAB", "BAB"}, 0);
         recipe.mapIngredient('B', new RecipeIngredient(Material.IRON_BARS));
         recipe.mapIngredient('C', new RecipeIngredient(Material.COPPER_INGOT));
         recipe.mapIngredient('A', new RecipeIngredient(Material.AMETHYST_SHARD));
-        recipe.mapIngredient('I', new RecipeIngredient(Material.IRON_INGOT));
         recipe.register();
 
         for (int i = 1; i < 16; i++) {
-            final CustomRecipe current = Crafting.createCustomRecipe(getByLevel(i + 1),
+            final CustomShapedRecipe current = Crafting.createCustomRecipe(getByLevel(i + 1),
                     new String[]{"AAA", "ABA", "AAA"}, 0);
             current.mapIngredient('A', new RecipeIngredient(Material.AMETHYST_SHARD));
             current.mapIngredient('B', new RecipeIngredient(new BatteryItem(i).asItemStack()));

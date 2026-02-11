@@ -5,7 +5,7 @@ import minevalley.core.api.Core;
 import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -52,14 +52,14 @@ public class CopperCoilItem implements CustomItem {
     }
 
     public static void registerRecipes() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(getLevel1(),
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(getLevel1(),
                 new String[]{"CCC", "CIC", "CCC"}, 0);
         recipe.mapIngredient('C', new RecipeIngredient(Material.COPPER_INGOT));
         recipe.mapIngredient('I', new RecipeIngredient(Material.IRON_BLOCK));
         recipe.register();
 
         for (int i = 1; i < 16; i++) {
-            final CustomRecipe current = Crafting.createCustomRecipe(getByLevel(i + 1),
+            final CustomShapedRecipe current = Crafting.createCustomRecipe(getByLevel(i + 1),
                     new String[]{"CCC", "CIC", "CCC"}, 0);
             current.mapIngredient('C', new RecipeIngredient(Material.COPPER_INGOT));
             current.mapIngredient('I', new RecipeIngredient(new CopperCoilItem(i).asItemStack()));

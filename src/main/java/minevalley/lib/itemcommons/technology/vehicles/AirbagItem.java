@@ -4,7 +4,7 @@ import minevalley.core.api.Core;
 import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -27,7 +27,7 @@ public class AirbagItem implements CustomItem {
     }
 
     public static void registerRecipe() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(AIRBAG_ITEM.asQuantity(4), new String[]{"WWW", "WTW", "WWW"}, 0);
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(AIRBAG_ITEM.asQuantity(4), new String[]{"WWW", "WTW", "WWW"}, 0);
         recipe.mapIngredient('W', new RecipeIngredient(Material.WHITE_WOOL));
         recipe.mapIngredient('T', new RecipeIngredient(Material.TNT));
         recipe.register();

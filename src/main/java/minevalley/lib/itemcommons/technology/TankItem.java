@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -43,13 +43,13 @@ public class TankItem implements CustomItem {
     }
 
     public static void registerRecipes() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(getLevel1(), new String[]{"III", "IBI", "III"}, 0);
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(getLevel1(), new String[]{"III", "IBI", "III"}, 0);
         recipe.mapIngredient('I', new RecipeIngredient(Material.IRON_INGOT));
         recipe.mapIngredient('B', new RecipeIngredient(Material.BARREL));
         recipe.register();
 
         for (int i = 1; i <= 16; i++) {
-            final CustomRecipe upgradeRecipe = Crafting.createCustomRecipe(new TankItem(i + 1).asItemStack(), new String[]{"III", "ITI", "III"}, 0);
+            final CustomShapedRecipe upgradeRecipe = Crafting.createCustomRecipe(new TankItem(i + 1).asItemStack(), new String[]{"III", "ITI", "III"}, 0);
             upgradeRecipe.mapIngredient('I', new RecipeIngredient(Material.IRON_INGOT));
             upgradeRecipe.mapIngredient('T', new RecipeIngredient(new TankItem(i).asItemStack()));
             upgradeRecipe.register();

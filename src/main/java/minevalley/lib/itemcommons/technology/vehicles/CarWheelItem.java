@@ -4,7 +4,7 @@ import minevalley.core.api.Core;
 import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -50,18 +50,18 @@ public class CarWheelItem implements CustomItem {
     }
 
     public static void registerRecipes() {
-        final CustomRecipe normal = Crafting.createCustomRecipe(CAR_WHEEL_NORMAL_ITEM, new String[]{"AAA", "ABA", "AAA"}, 1_000);
+        final CustomShapedRecipe normal = Crafting.createCustomRecipe(CAR_WHEEL_NORMAL_ITEM, new String[]{"AAA", "ABA", "AAA"}, 1_000);
         normal.mapIngredient('A', new RecipeIngredient(Material.SLIME_BALL));
         normal.mapIngredient('B', new RecipeIngredient(CarRimItem.CAR_RIM_ITEM));
         normal.register();
 
-        final CustomRecipe repairHandling = Crafting.createCustomRecipe(CAR_WHEEL_SPEED_ITEM, new String[]{"ABA", "BCB", "ABA"}, 1_000);
+        final CustomShapedRecipe repairHandling = Crafting.createCustomRecipe(CAR_WHEEL_SPEED_ITEM, new String[]{"ABA", "BCB", "ABA"}, 1_000);
         repairHandling.mapIngredient('A', new RecipeIngredient(Material.SLIME_BALL));
         repairHandling.mapIngredient('B', new RecipeIngredient(Material.FLINT));
         repairHandling.mapIngredient('C', new RecipeIngredient(CarWheelItem::isCarWheel));
         repairHandling.register();
 
-        final CustomRecipe repairSpeed = Crafting.createCustomRecipe(CAR_WHEEL_HANDLING_ITEM, new String[]{"AAA", "ABA", "AAA"}, 1_000);
+        final CustomShapedRecipe repairSpeed = Crafting.createCustomRecipe(CAR_WHEEL_HANDLING_ITEM, new String[]{"AAA", "ABA", "AAA"}, 1_000);
         repairSpeed.mapIngredient('A', new RecipeIngredient(Material.SLIME_BALL));
         repairSpeed.mapIngredient('B', new RecipeIngredient(CarWheelItem::isCarWheel));
         repairSpeed.register();

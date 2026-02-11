@@ -4,7 +4,7 @@ import minevalley.core.api.Core;
 import minevalley.core.api.utils.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import minevalley.lib.itemcommons.technology.ScrewItem;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -28,7 +28,7 @@ public class CarRimItem implements CustomItem {
     }
 
     public static void registerRecipe() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(CAR_RIM_ITEM, new String[]{" S ", "SBS", " S "}, 4_000);
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(CAR_RIM_ITEM, new String[]{" S ", "SBS", " S "}, 4_000);
         recipe.mapIngredient('B', new RecipeIngredient(Material.NETHER_BRICK));
         recipe.mapIngredient('S', new RecipeIngredient(ScrewItem.SCREW_ITEM));
         recipe.register();

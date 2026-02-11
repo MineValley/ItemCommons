@@ -4,6 +4,7 @@ import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomRecipe;
+import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -25,7 +26,7 @@ public class SparkPlugItem implements CustomItem {
     }
 
     public static void registerRecipe() {
-        final CustomRecipe recipe = Crafting.createCustomRecipe(SPARK_PLUG_ITEM.asQuantity(4), new String[]{"F", "I", "C"}, 0);
+        final CustomShapedRecipe recipe = Crafting.createCustomRecipe(SPARK_PLUG_ITEM.asQuantity(4), new String[]{"F", "I", "C"}, 0);
         recipe.mapIngredient('F', new RecipeIngredient(Material.FLINT));
         recipe.mapIngredient('I', new RecipeIngredient(Material.IRON_INGOT));
         recipe.mapIngredient('C', new RecipeIngredient(Material.COPPER_INGOT));
