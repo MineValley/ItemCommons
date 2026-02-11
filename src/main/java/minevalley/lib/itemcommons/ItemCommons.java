@@ -21,7 +21,7 @@ public final class ItemCommons {
 
     private static void initiateTechnologyCraftingRecipes() {
         initiateEnginesCraftingRecipes();
-        initiateCraftingRecipes();
+        initiateVehiclesCraftingRecipes();
         BatteryItem.registerRecipes();
         CopperCoilItem.registerRecipes();
         LightBulbItem.registerRecipe();
