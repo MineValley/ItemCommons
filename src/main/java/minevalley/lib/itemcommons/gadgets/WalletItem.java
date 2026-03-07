@@ -2,7 +2,7 @@ package minevalley.lib.itemcommons.gadgets;
 
 import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
-import minevalley.core.api.utils.CustomItemFlag;
+import minevalley.core.api.item.CustomItemFlag;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;

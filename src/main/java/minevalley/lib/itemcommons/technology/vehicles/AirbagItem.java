@@ -1,7 +1,7 @@
 package minevalley.lib.itemcommons.technology.vehicles;
 
 import minevalley.core.api.Core;
-import minevalley.core.api.utils.CustomItemFlag;
+import minevalley.core.api.item.CustomItemFlag;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomShapedRecipe;
