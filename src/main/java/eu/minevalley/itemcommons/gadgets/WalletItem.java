@@ -50,7 +50,8 @@ public class WalletItem implements CustomItem {
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
-                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
+                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING,
+                        CustomItemFlag.PREVENT_CRAFTING)
                 .setItemModel(itemModel())
                 .setMaxStackSize(1)
                 .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))

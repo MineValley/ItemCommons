@@ -46,7 +46,8 @@ public class PhoneItem implements CustomItem {
                 .setLore(LORE)
                 .setItemModel(screen.getItemModel())
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
-                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
+                .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING,
+                        CustomItemFlag.PREVENT_CRAFTING)
                 .setMaxStackSize(1)
                 .setTooltipStyle(new NamespacedKey("minecraft", "phone"))
                 .build();
