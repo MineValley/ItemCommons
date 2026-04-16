@@ -1,11 +1,11 @@
-package minevalley.lib.itemcommons;
+package eu.minevalley.itemcommons;
 
-import minevalley.lib.itemcommons.technology.*;
-import minevalley.lib.itemcommons.technology.engines.CombustionEngineItem;
-import minevalley.lib.itemcommons.technology.engines.CylinderItem;
-import minevalley.lib.itemcommons.technology.engines.ElectricMotorItem;
-import minevalley.lib.itemcommons.technology.engines.SparkPlugItem;
-import minevalley.lib.itemcommons.technology.vehicles.*;
+import eu.minevalley.itemcommons.technology.*;
+import eu.minevalley.itemcommons.technology.engines.CombustionEngineItem;
+import eu.minevalley.itemcommons.technology.engines.CylinderItem;
+import eu.minevalley.itemcommons.technology.engines.ElectricMotorItem;
+import eu.minevalley.itemcommons.technology.engines.SparkPlugItem;
+import eu.minevalley.itemcommons.technology.vehicles.*;
 
 @SuppressWarnings("unused")
 public final class ItemCommons {

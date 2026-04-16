@@ -1,4 +1,4 @@
-package minevalley.lib.itemcommons.gadgets.phone;
+package eu.minevalley.itemcommons.gadgets.phone;
 
 import lombok.AccessLevel;
 import lombok.Getter;

@@ -1,10 +1,10 @@
-package minevalley.lib.itemcommons.technology;
+package eu.minevalley.itemcommons.technology;
 
+import eu.minevalley.itemcommons.CustomItem;
 import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomShapedRecipe;
-import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

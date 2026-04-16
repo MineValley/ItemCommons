@@ -1,11 +1,11 @@
-package minevalley.lib.itemcommons.technology;
+package eu.minevalley.itemcommons.technology;
 
+import eu.minevalley.itemcommons.CustomItem;
 import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
 import minevalley.crafting.api.recipe.CustomShapedRecipe;
-import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;

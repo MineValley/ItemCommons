@@ -1,9 +1,9 @@
-package minevalley.lib.itemcommons.technology.engines;
+package eu.minevalley.itemcommons.technology.engines;
 
+import eu.minevalley.itemcommons.CustomItem;
 import lombok.RequiredArgsConstructor;
 import minevalley.core.api.Core;
 import minevalley.core.api.item.CustomItemFlag;
-import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;

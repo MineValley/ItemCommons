@@ -1,4 +1,4 @@
-package minevalley.lib.itemcommons;
+package eu.minevalley.itemcommons;
 
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Contract;
