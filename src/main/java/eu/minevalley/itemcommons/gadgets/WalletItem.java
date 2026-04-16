@@ -35,13 +35,13 @@ public class WalletItem implements CustomItem {
             Component.text("Teile deines Bargelds stehlen!", TextColor.color(171, 90, 79))
                     .decoration(TextDecoration.ITALIC, false)
     };
-    public static final int CUSTOM_MODEL_DATA_OPEN = 11;
-    public static final int CUSTOM_MODEL_DATA_CLOSED = 12;
+    public static final NamespacedKey MODEL_OPEN = NamespacedKey.fromString("minevalley:tool/wallet/open");
+    public static final NamespacedKey MODEL_CLOSED = NamespacedKey.fromString("minevalley:tool/wallet/closed");
 
     private final boolean open;
 
-    public int customModelData() {
-        return open ? CUSTOM_MODEL_DATA_OPEN : CUSTOM_MODEL_DATA_CLOSED;
+    public NamespacedKey itemModel() {
+        return open ? MODEL_OPEN : MODEL_CLOSED;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class WalletItem implements CustomItem {
                 .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
-                .setCustomModelData(customModelData())
+                .setItemModel(itemModel())
                 .setMaxStackSize(1)
                 .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))
                 .build();
@@ -61,8 +61,8 @@ public class WalletItem implements CustomItem {
     public static boolean isWallet(@Nullable ItemStack stack) {
         if (stack == null) return false;
         return stack.getType() == MATERIAL
-                && stack.hasItemMeta()
-                && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
+               && stack.hasItemMeta()
+               && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
     }
 
     @Contract(value = "null -> false", pure = true)

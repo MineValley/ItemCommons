@@ -44,7 +44,7 @@ public class PhoneItem implements CustomItem {
         final ItemStack item = Core.createItem(MATERIAL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
-                .setCustomModelData(screen.getCustomModelData())
+                .setItemModel(screen.getItemModel())
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING)
                 .setMaxStackSize(1)
@@ -59,7 +59,7 @@ public class PhoneItem implements CustomItem {
     public static boolean isPhone(@Nullable ItemStack stack) {
         if (stack == null) return false;
         return stack.getType() == MATERIAL
-                && stack.hasItemMeta()
-                && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
+               && stack.hasItemMeta()
+               && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
     }
 }
