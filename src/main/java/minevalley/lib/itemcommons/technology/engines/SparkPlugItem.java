@@ -3,7 +3,6 @@ package minevalley.lib.itemcommons.technology.engines;
 import minevalley.core.api.Core;
 import minevalley.crafting.api.Crafting;
 import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomRecipe;
 import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import minevalley.lib.itemcommons.CustomItem;
 import net.kyori.adventure.text.format.NamedTextColor;
