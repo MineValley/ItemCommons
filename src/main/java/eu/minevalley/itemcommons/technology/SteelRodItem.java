@@ -1,9 +1,9 @@
 package eu.minevalley.itemcommons.technology;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 

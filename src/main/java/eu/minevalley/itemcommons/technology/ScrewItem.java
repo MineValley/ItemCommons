@@ -1,10 +1,10 @@
 package eu.minevalley.itemcommons.technology;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import minevalley.core.api.Core;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
+import eu.minevalley.proxima.api.Proxima;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class ScrewItem implements CustomItem {
 
-    public static final ItemStack SCREW_ITEM = Core.createItem(Material.STONE)
+    public static final ItemStack SCREW_ITEM = Proxima.createItem(Material.STONE)
             .setDisplayName("Schraube", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

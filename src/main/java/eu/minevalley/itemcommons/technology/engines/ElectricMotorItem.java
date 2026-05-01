@@ -1,14 +1,14 @@
 package eu.minevalley.itemcommons.technology.engines;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.technology.CopperCoilItem;
 import eu.minevalley.itemcommons.technology.ScrewItem;
+import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.proxima.api.item.CustomItemFlag;
 import lombok.RequiredArgsConstructor;
-import minevalley.core.api.Core;
-import minevalley.core.api.item.CustomItemFlag;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -32,7 +32,7 @@ public class ElectricMotorItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(SKULL)
+        return Proxima.createItem(SKULL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(NamedTextColor.GRAY, kilowatts + " kW")
                 .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)

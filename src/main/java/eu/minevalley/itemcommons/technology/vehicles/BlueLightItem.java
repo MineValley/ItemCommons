@@ -1,11 +1,11 @@
 package eu.minevalley.itemcommons.technology.vehicles;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.technology.LightBulbItem;
-import minevalley.core.api.Core;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
+import eu.minevalley.proxima.api.Proxima;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class BlueLightItem implements CustomItem {
 
-    public static final ItemStack BLUE_LIGHT_ITEM = Core.createItem(Material.NETHER_STAR)
+    public static final ItemStack BLUE_LIGHT_ITEM = Proxima.createItem(Material.NETHER_STAR)
             .setCustomModelData(20)
             .setDisplayName("Blaulicht", NamedTextColor.WHITE)
             .setMaxStackSize(16)

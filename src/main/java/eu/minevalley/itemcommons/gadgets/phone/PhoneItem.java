@@ -1,9 +1,9 @@
 package eu.minevalley.itemcommons.gadgets.phone;
 
 import eu.minevalley.itemcommons.CustomItem;
+import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.proxima.api.item.CustomItemFlag;
 import lombok.RequiredArgsConstructor;
-import minevalley.core.api.Core;
-import minevalley.core.api.item.CustomItemFlag;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -41,7 +41,7 @@ public class PhoneItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        final ItemStack item = Core.createItem(MATERIAL)
+        final ItemStack item = Proxima.createItem(MATERIAL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .setItemModel(screen.getItemModel())

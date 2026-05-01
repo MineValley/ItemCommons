@@ -69,9 +69,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>minevalley.crafting</groupId>
-            <artifactId>api</artifactId>
-            <version>1.0.4</version>
+            <groupId>eu.minevalley</groupId>
+            <artifactId>crafting-api</artifactId>
+            <version>1.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

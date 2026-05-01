@@ -1,12 +1,12 @@
 package eu.minevalley.itemcommons.technology.vehicles;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.technology.LightBulbItem;
-import minevalley.core.api.Core;
-import minevalley.core.api.item.CustomItemFlag;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
+import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.proxima.api.item.CustomItemFlag;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HeadlightsItem implements CustomItem {
 
-    public static final ItemStack HEADLIGHTS_ITEM = Core.createItem("b43f9854fe0d9e69302565305fcc6de2ab2b8a39c9a4d6f69f3f68d5b292e7fd")
+    public static final ItemStack HEADLIGHTS_ITEM = Proxima.createItem("b43f9854fe0d9e69302565305fcc6de2ab2b8a39c9a4d6f69f3f68d5b292e7fd")
             .setDisplayName("Scheinwerfer", NamedTextColor.WHITE)
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(16)

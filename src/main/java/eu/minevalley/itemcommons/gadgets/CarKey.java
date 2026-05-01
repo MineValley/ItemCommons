@@ -1,8 +1,8 @@
 package eu.minevalley.itemcommons.gadgets;
 
 import eu.minevalley.itemcommons.CustomItem;
-import minevalley.core.api.Core;
-import minevalley.core.api.item.CustomItemFlag;
+import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.proxima.api.item.CustomItemFlag;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -65,7 +65,7 @@ public class CarKey implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(MATERIAL)
+        return Proxima.createItem(MATERIAL)
                 .setDisplayName(displayName)
                 .setLore(lore)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)

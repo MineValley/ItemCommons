@@ -1,11 +1,11 @@
 package eu.minevalley.itemcommons.technology;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
+import eu.minevalley.proxima.api.Proxima;
 import lombok.RequiredArgsConstructor;
-import minevalley.core.api.Core;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -30,7 +30,7 @@ public class BatteryItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Core.createItem(SKULL)
+        return Proxima.createItem(SKULL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(NamedTextColor.GRAY, "Kapazität: " + (5 * level) + " kWh")
                 .build();

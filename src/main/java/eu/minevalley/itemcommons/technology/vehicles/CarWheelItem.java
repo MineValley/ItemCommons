@@ -1,11 +1,11 @@
 package eu.minevalley.itemcommons.technology.vehicles;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import minevalley.core.api.Core;
-import minevalley.core.api.item.CustomItemFlag;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
+import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.proxima.api.item.CustomItemFlag;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -23,21 +23,21 @@ public class CarWheelItem implements CustomItem {
     private static final String SKULL = "ddfe5a963869415340d2cec0f82d08df73dcb168428487b514aa8d4ec19fe2c";
     private static final TextComponent DISPLAY_NAME = Component.text("Autorad").color(NamedTextColor.WHITE);
 
-    public static final ItemStack CAR_WHEEL_NORMAL_ITEM = Core.createItem(SKULL)
+    public static final ItemStack CAR_WHEEL_NORMAL_ITEM = Proxima.createItem(SKULL)
             .setDisplayName(DISPLAY_NAME)
             .setLore(NamedTextColor.GRAY, "Allwetter-Bereifung")
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(4)
             .build();
 
-    public static final ItemStack CAR_WHEEL_SPEED_ITEM = Core.createItem(SKULL)
+    public static final ItemStack CAR_WHEEL_SPEED_ITEM = Proxima.createItem(SKULL)
             .setDisplayName(DISPLAY_NAME)
             .setLore(NamedTextColor.GRAY, "Racing-Bereifung", "+10% Geschwindigkeit", "+20% Verschleiß")
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(4)
             .build();
 
-    public static final ItemStack CAR_WHEEL_HANDLING_ITEM = Core.createItem(SKULL)
+    public static final ItemStack CAR_WHEEL_HANDLING_ITEM = Proxima.createItem(SKULL)
             .setDisplayName(DISPLAY_NAME)
             .setLore(NamedTextColor.GRAY, "Offroad-Bereifung", "+20% Handling", "-20% Geschwindigkeit")
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)

@@ -1,10 +1,10 @@
 package eu.minevalley.itemcommons.technology.vehicles;
 
+import eu.minevalley.crafting.api.Crafting;
+import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
+import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
 import lombok.RequiredArgsConstructor;
-import minevalley.crafting.api.Crafting;
-import minevalley.crafting.api.ingredient.RecipeIngredient;
-import minevalley.crafting.api.recipe.CustomShapedRecipe;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
