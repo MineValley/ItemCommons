@@ -1,14 +1,26 @@
 package eu.minevalley.itemcommons;
 
+import eu.minevalley.core.api.Core;
 import eu.minevalley.itemcommons.technology.*;
 import eu.minevalley.itemcommons.technology.engines.CombustionEngineItem;
 import eu.minevalley.itemcommons.technology.engines.CylinderItem;
 import eu.minevalley.itemcommons.technology.engines.ElectricMotorItem;
 import eu.minevalley.itemcommons.technology.engines.SparkPlugItem;
 import eu.minevalley.itemcommons.technology.vehicles.*;
+import org.jetbrains.annotations.Contract;
+
+import javax.annotation.Nonnull;
 
 @SuppressWarnings("unused")
 public final class ItemCommons {
+
+    private static Core core;
+
+    @Nonnull
+    @Contract(pure = true)
+    public static Core core() {
+        return core;
+    }
 
     /**
      * Initiates all crafting recipes of the ItemCommons module.

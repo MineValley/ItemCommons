@@ -4,7 +4,7 @@ import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class LightBulbItem implements CustomItem {
 
-    public static final ItemStack LIGHT_BULB_ITEM = Proxima.createItem(Material.STONE)
+    public static final ItemStack LIGHT_BULB_ITEM = ItemCommons.core().createItem(Material.STONE)
             .setDisplayName("Glühbirne", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

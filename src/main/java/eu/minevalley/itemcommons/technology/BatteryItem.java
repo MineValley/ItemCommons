@@ -4,7 +4,7 @@ import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.itemcommons.ItemCommons;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -30,7 +30,7 @@ public class BatteryItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Proxima.createItem(SKULL)
+        return ItemCommons.core().createItem(SKULL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(NamedTextColor.GRAY, "Kapazität: " + (5 * level) + " kWh")
                 .build();

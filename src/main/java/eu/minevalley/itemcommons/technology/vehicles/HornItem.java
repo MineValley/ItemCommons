@@ -4,7 +4,7 @@ import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HornItem implements CustomItem {
 
-    public static final ItemStack HORN_ITEM = Proxima.createItem(Material.NETHER_STAR)
+    public static final ItemStack HORN_ITEM = ItemCommons.core().createItem(Material.NETHER_STAR)
             .setCustomModelData(9)
             .setDisplayName("Hupe", NamedTextColor.WHITE)
             .setMaxStackSize(16)

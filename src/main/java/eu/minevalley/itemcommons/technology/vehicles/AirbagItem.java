@@ -1,11 +1,11 @@
 package eu.minevalley.itemcommons.technology.vehicles;
 
+import eu.minevalley.core.api.item.CustomItemFlag;
 import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
-import eu.minevalley.proxima.api.item.CustomItemFlag;
+import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class AirbagItem implements CustomItem {
 
-    public static final ItemStack AIRBAG_ITEM = Proxima.createItem(Material.LIGHT_GRAY_WOOL)
+    public static final ItemStack AIRBAG_ITEM = ItemCommons.core().createItem(Material.LIGHT_GRAY_WOOL)
             .setDisplayName("Airbag", NamedTextColor.WHITE)
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(16)

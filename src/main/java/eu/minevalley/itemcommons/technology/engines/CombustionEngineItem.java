@@ -1,8 +1,8 @@
 package eu.minevalley.itemcommons.technology.engines;
 
+import eu.minevalley.core.api.item.CustomItemFlag;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
-import eu.minevalley.proxima.api.item.CustomItemFlag;
+import eu.minevalley.itemcommons.ItemCommons;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -39,7 +39,7 @@ public enum CombustionEngineItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Proxima.createItem(SKULL)
+        return ItemCommons.core().createItem(SKULL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(NamedTextColor.GRAY, cylinders + " Zylinder", horsepower + " PS")
                 .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)

@@ -1,11 +1,11 @@
 package eu.minevalley.itemcommons.technology.engines;
 
+import eu.minevalley.core.api.item.CustomItemFlag;
 import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
-import eu.minevalley.proxima.api.item.CustomItemFlag;
+import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class CylinderItem implements CustomItem {
 
-    public static final ItemStack CYLINDER_ITEM = Proxima.createItem("139ac257f4e04adc6ab3e46fd3b28749e866faa9ce6a1d6d526e0e3864d9222")
+    public static final ItemStack CYLINDER_ITEM = ItemCommons.core().createItem("139ac257f4e04adc6ab3e46fd3b28749e866faa9ce6a1d6d526e0e3864d9222")
             .setDisplayName("Zylinder", NamedTextColor.WHITE)
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(4)

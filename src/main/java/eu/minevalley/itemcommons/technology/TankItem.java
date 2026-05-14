@@ -4,7 +4,7 @@ import eu.minevalley.crafting.api.Crafting;
 import eu.minevalley.crafting.api.ingredient.RecipeIngredient;
 import eu.minevalley.crafting.api.recipe.CustomShapedRecipe;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
+import eu.minevalley.itemcommons.ItemCommons;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
@@ -23,7 +23,7 @@ public class TankItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Proxima.createItem(MATERIAL)
+        return ItemCommons.core().createItem(MATERIAL)
                 .setDisplayName("Tank", NamedTextColor.WHITE)
                 .setLore(NamedTextColor.GRAY, "Kapazität: " + (level * 5) + " Liter")
                 .setMaxStackSize(4)

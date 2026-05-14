@@ -1,8 +1,8 @@
 package eu.minevalley.itemcommons.gadgets;
 
+import eu.minevalley.core.api.item.CustomItemFlag;
 import eu.minevalley.itemcommons.CustomItem;
-import eu.minevalley.proxima.api.Proxima;
-import eu.minevalley.proxima.api.item.CustomItemFlag;
+import eu.minevalley.itemcommons.ItemCommons;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
@@ -46,7 +46,7 @@ public class WalletItem implements CustomItem {
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return Proxima.createItem(MATERIAL)
+        return ItemCommons.core().createItem(MATERIAL)
                 .setDisplayName(DISPLAY_NAME)
                 .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
