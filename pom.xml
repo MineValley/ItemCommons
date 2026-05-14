@@ -6,7 +6,7 @@
 
     <groupId>eu.minevalley</groupId>
     <artifactId>item-commons</artifactId>
-    <version>1.5.1</version>
+    <version>1.5.2</version>
     <packaging>jar</packaging>
 
     <name>ItemCommons</name>
