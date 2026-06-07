@@ -60,12 +60,12 @@ public class CarKeyItem implements CustomItem {
                 .append(Component.text(vehicleName, NamedTextColor.YELLOW)
                         .decoration(TextDecoration.ITALIC, false));
         this.lore = List.of(
-                Component.text(" ├ ", NamedTextColor.DARK_GRAY)
+                Component.text(" ├ ", NamedTextColor.DARK_GRAY).decoration(TextDecoration.ITALIC, false)
                         .append(Component.text("Hersteller: ", NamedTextColor.GRAY)
                                 .decoration(TextDecoration.ITALIC, false))
                         .append(Component.text(manufacturer, NamedTextColor.WHITE)
                                 .decoration(TextDecoration.ITALIC, false)),
-                Component.text(" └ ", NamedTextColor.DARK_GRAY)
+                Component.text(" └ ", NamedTextColor.DARK_GRAY).decoration(TextDecoration.ITALIC, false)
                         .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY)
                                 .decoration(TextDecoration.ITALIC, false))
                         .append(Component.text(licencePlate, NamedTextColor.WHITE)
