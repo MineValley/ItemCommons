@@ -5,9 +5,7 @@ import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.ItemCommons;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
-import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -23,17 +21,9 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class CarKey implements CustomItem {
+public class CarKeyItem implements CustomItem {
 
     public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
-    public static @Nonnull TextComponent[] LORE = new TextComponent[]{
-            Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
-                    .decoration(TextDecoration.ITALIC, false),
-            Component.text("Wenn du stirbst, können andere Spieler", TextColor.color(171, 90, 79))
-                    .decoration(TextDecoration.ITALIC, false),
-            Component.text("Teile deines Bargelds stehlen!", TextColor.color(171, 90, 79))
-                    .decoration(TextDecoration.ITALIC, false)
-    };
     public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:vehicle/tool/car_key");
     public static final NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
     public static final NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
@@ -43,7 +33,7 @@ public class CarKey implements CustomItem {
     private final @Nonnull String licencePlate;
     private final @Getter int keyIndex;
 
-    public CarKey(@Nonnull ItemStack item) throws IllegalArgumentException {
+    public CarKeyItem(@Nonnull ItemStack item) throws IllegalArgumentException {
         if (item == null) throw new IllegalArgumentException("Item cannot be null");
         final ItemMeta meta = item.getItemMeta();
         if (meta == null) throw new IllegalArgumentException("Item meta cannot be null");
@@ -63,17 +53,23 @@ public class CarKey implements CustomItem {
         this.keyIndex = index;
     }
 
-    public CarKey(@Nonnull String vehicleType, @Nonnull String vehicleName, @Nonnull String manufacturer,
-                  @Nonnull String licencePlate, int keyIndex) {
+    public CarKeyItem(@Nonnull String vehicleType, @Nonnull String vehicleName, @Nonnull String manufacturer,
+                      @Nonnull String licencePlate, int keyIndex) {
         this.displayName = Component.text(vehicleType + "schlüssel » ", NamedTextColor.GRAY)
-                .append(Component.text(vehicleName, NamedTextColor.YELLOW));
+                .decoration(TextDecoration.ITALIC, false)
+                .append(Component.text(vehicleName, NamedTextColor.YELLOW)
+                        .decoration(TextDecoration.ITALIC, false));
         this.lore = List.of(
                 Component.text(" ├ ", NamedTextColor.DARK_GRAY)
-                        .append(Component.text("Hersteller: ", NamedTextColor.GRAY))
-                        .append(Component.text(manufacturer, NamedTextColor.WHITE)),
+                        .append(Component.text("Hersteller: ", NamedTextColor.GRAY)
+                                .decoration(TextDecoration.ITALIC, false))
+                        .append(Component.text(manufacturer, NamedTextColor.WHITE)
+                                .decoration(TextDecoration.ITALIC, false)),
                 Component.text(" └ ", NamedTextColor.DARK_GRAY)
-                        .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY))
-                        .append(Component.text(licencePlate, NamedTextColor.WHITE)));
+                        .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY)
+                                .decoration(TextDecoration.ITALIC, false))
+                        .append(Component.text(licencePlate, NamedTextColor.WHITE)
+                                .decoration(TextDecoration.ITALIC, false)));
         this.licencePlate = licencePlate;
         this.keyIndex = keyIndex;
     }
@@ -103,7 +99,7 @@ public class CarKey implements CustomItem {
     public static boolean isCarKey(@Nullable ItemStack stack) {
         if (stack == null) return false;
         try {
-            new CarKey(stack);
+            new CarKeyItem(stack);
             return true;
         } catch (IllegalArgumentException e) {
             return false;
