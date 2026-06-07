@@ -3,6 +3,7 @@ package eu.minevalley.itemcommons.gadgets;
 import eu.minevalley.core.api.item.CustomItemFlag;
 import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.ItemCommons;
+import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextComponent;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -13,6 +14,8 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.Contract;
 
 import javax.annotation.Nonnull;
@@ -32,11 +35,13 @@ public class CarKey implements CustomItem {
                     .decoration(TextDecoration.ITALIC, false)
     };
     public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:vehicle/tool/car_key");
+    public static final NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
+    public static final NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
 
     private final @Nonnull Component displayName;
     private final @Nonnull List<Component> lore;
     private final @Nonnull String licencePlate;
-    private final int keyIndex;
+    private final @Getter int keyIndex;
 
     public CarKey(@Nonnull ItemStack item) throws IllegalArgumentException {
         if (item == null) throw new IllegalArgumentException("Item cannot be null");
@@ -49,31 +54,49 @@ public class CarKey implements CustomItem {
         if (foreignLore == null) throw new IllegalArgumentException("Item meta must have lore");
         this.lore = foreignLore;
 
-        // TODO 16.4.2026: CarKey() (CarKey)
-        throw new UnsupportedOperationException("Not implemented yet");
+        final PersistentDataContainer pdc = meta.getPersistentDataContainer();
+        final String plate = pdc.get(KEY_LICENCE_PLATE, PersistentDataType.STRING);
+        if (plate == null) throw new IllegalArgumentException("Item is not a valid car key: missing licence plate");
+        this.licencePlate = plate;
+        final Integer index = pdc.get(KEY_KEY_INDEX, PersistentDataType.INTEGER);
+        if (index == null) throw new IllegalArgumentException("Item is not a valid car key: missing key index");
+        this.keyIndex = index;
     }
 
-    public CarKey(@Nonnull String vehicleType, @Nonnull String vehicleName, @Nonnull String licencePlate, int keyIndex) {
+    public CarKey(@Nonnull String vehicleType, @Nonnull String vehicleName, @Nonnull String manufacturer,
+                  @Nonnull String licencePlate, int keyIndex) {
         this.displayName = Component.text(vehicleType + "schlüssel » ", NamedTextColor.GRAY)
                 .append(Component.text(vehicleName, NamedTextColor.YELLOW));
-        this.lore = List.of(Component.text(" └ ", NamedTextColor.DARK_GRAY)
-                .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY))
-                .append(Component.text(licencePlate, NamedTextColor.WHITE)));
+        this.lore = List.of(
+                Component.text(" ├ ", NamedTextColor.DARK_GRAY)
+                        .append(Component.text("Hersteller: ", NamedTextColor.GRAY))
+                        .append(Component.text(manufacturer, NamedTextColor.WHITE)),
+                Component.text(" └ ", NamedTextColor.DARK_GRAY)
+                        .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY))
+                        .append(Component.text(licencePlate, NamedTextColor.WHITE)));
         this.licencePlate = licencePlate;
         this.keyIndex = keyIndex;
     }
 
     @Override
     public @Nonnull ItemStack asItemStack() {
-        return ItemCommons.core().createItem(MATERIAL)
+        final ItemStack item = ItemCommons.core().createItem(MATERIAL)
                 .setDisplayName(displayName)
                 .setLore(lore)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.PREVENT_KEY_DROPPING, CustomItemFlag.PREVENT_CRAFTING)
-                // TODO 16.4.2026: add persistent data container for storing important data (licence plate, key index) (CarKey)
                 .setItemModel(ITEM_MODEL)
                 .setMaxStackSize(1)
                 .build();
+        final ItemMeta meta = item.getItemMeta();
+        meta.getPersistentDataContainer().set(KEY_LICENCE_PLATE, PersistentDataType.STRING, licencePlate);
+        meta.getPersistentDataContainer().set(KEY_KEY_INDEX, PersistentDataType.INTEGER, keyIndex);
+        item.setItemMeta(meta);
+        return item;
+    }
+
+    public @Nonnull String getLicencePlate() {
+        return licencePlate;
     }
 
     @Contract(value = "null -> false", pure = true)
