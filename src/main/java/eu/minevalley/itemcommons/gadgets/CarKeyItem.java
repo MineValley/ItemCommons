@@ -24,7 +24,7 @@ import java.util.List;
 public class CarKeyItem implements CustomItem {
 
     public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
-    public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:vehicle/tool/car_key");
+    public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:tool/vehicle/car_key");
     public static final NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
     public static final NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
 

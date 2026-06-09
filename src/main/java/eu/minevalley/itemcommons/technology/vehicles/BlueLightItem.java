@@ -8,6 +8,7 @@ import eu.minevalley.itemcommons.ItemCommons;
 import eu.minevalley.itemcommons.technology.LightBulbItem;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -15,8 +16,14 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class BlueLightItem implements CustomItem {
 
-    public static final ItemStack BLUE_LIGHT_ITEM = ItemCommons.core().createItem(Material.NETHER_STAR)
-            .setCustomModelData(20)
+    public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
+    public static final NamespacedKey ITEM_MODEL_OFF = NamespacedKey.fromString("minevalley:tool/vehicle/siren_off");
+    public static final NamespacedKey ITEM_MODEL_ON = NamespacedKey.fromString("minevalley:tool/vehicle/siren_on");
+    public static final NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
+    public static final NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
+
+    public static final ItemStack BLUE_LIGHT_ITEM = ItemCommons.core().createItem(MATERIAL)
+            .setItemModel(ITEM_MODEL_OFF)
             .setDisplayName("Blaulicht", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();
