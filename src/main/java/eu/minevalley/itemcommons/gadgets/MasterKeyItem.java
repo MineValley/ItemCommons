@@ -42,7 +42,6 @@ public class MasterKeyItem implements CustomItem {
                         CustomItemFlag.PREVENT_CRAFTING, CustomItemFlag.TEMPORARY)
                 .setItemModel(ITEM_MODEL)
                 .setMaxStackSize(1)
-                .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))
                 .build();
     }
 
