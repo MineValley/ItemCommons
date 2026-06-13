@@ -13,13 +13,12 @@ import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.Contract;
-import org.jspecify.annotations.NonNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
-public class MasterKeyItem implements CustomItem  {
+public class MasterKeyItem implements CustomItem {
 
     public static final ItemStack KEY = ItemCommons.core().createItem(Material.NETHER_STAR)
             .setDisplayName(Component.text("Universalschlüssel", TextColor.color(70, 178, 224))
@@ -50,6 +49,6 @@ public class MasterKeyItem implements CustomItem  {
     public static boolean isHoldingMasterKey(@Nonnull OnlineUser user) {
         if (!user.isTeamler()) return false;
         if (!user.team().isAllowedToUseGeneralKey()) return false;
-        return isMasterKey(user.player().getActiveItem());
+        return isMasterKey(user.player().getInventory().getItemInMainHand());
     }
 }
