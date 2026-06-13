@@ -38,7 +38,7 @@ public class UniversalKeyItem implements CustomItem {
                 .setLore(LORE)
                 .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING,
-                        CustomItemFlag.PREVENT_CRAFTING)
+                        CustomItemFlag.PREVENT_CRAFTING, CustomItemFlag.TEMPORARY)
                 .setItemModel(ITEM_MODEL)
                 .setMaxStackSize(1)
                 .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))
