@@ -1,6 +1,7 @@
 package eu.minevalley.itemcommons.gadgets;
 
 import eu.minevalley.core.api.item.CustomItemFlag;
+import eu.minevalley.core.api.user.OnlineUser;
 import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.Component;
@@ -49,5 +50,11 @@ public class UniversalKeyItem implements CustomItem {
     public static boolean isUniversalKey(@Nullable ItemStack stack) {
         if (stack == null) return false;
         return new UniversalKeyItem().asItemStack().isSimilar(stack);
+    }
+
+    public static boolean isHoldingUniversalKey(@Nonnull OnlineUser user) {
+        if (!user.isTeamler()) return false;
+        if (!user.team().isAllowedToUseGeneralKey()) return false;
+        return isUniversalKey(user.player().getActiveItem());
     }
 }
