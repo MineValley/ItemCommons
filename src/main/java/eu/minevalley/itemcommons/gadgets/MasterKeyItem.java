@@ -19,7 +19,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 @SuppressWarnings("unused")
-public class UniversalKeyItem implements CustomItem {
+public class MasterKeyItem implements CustomItem {
 
     public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
     public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:tool/key");
@@ -47,14 +47,14 @@ public class UniversalKeyItem implements CustomItem {
     }
 
     @Contract(value = "null -> false", pure = true)
-    public static boolean isUniversalKey(@Nullable ItemStack stack) {
+    public static boolean isMasterKey(@Nullable ItemStack stack) {
         if (stack == null) return false;
-        return new UniversalKeyItem().asItemStack().isSimilar(stack);
+        return new MasterKeyItem().asItemStack().isSimilar(stack);
     }
 
-    public static boolean isHoldingUniversalKey(@Nonnull OnlineUser user) {
+    public static boolean isHoldingMasterKey(@Nonnull OnlineUser user) {
         if (!user.isTeamler()) return false;
         if (!user.team().isAllowedToUseGeneralKey()) return false;
-        return isUniversalKey(user.player().getActiveItem());
+        return isMasterKey(user.player().getActiveItem());
     }
 }
