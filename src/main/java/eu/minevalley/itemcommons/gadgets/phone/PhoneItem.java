@@ -49,7 +49,7 @@ public class PhoneItem implements CustomItem {
                 .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING,
                         CustomItemFlag.PREVENT_CRAFTING)
                 .setMaxStackSize(1)
-                .setTooltipStyle(new NamespacedKey("minecraft", "phone"))
+                .setTooltipStyle(new NamespacedKey("minevalley", "phone"))
                 .build();
         item.editMeta(FireworkEffectMeta.class,
                 meta -> meta.setEffect(FireworkEffect.builder().withColor(color).build()));

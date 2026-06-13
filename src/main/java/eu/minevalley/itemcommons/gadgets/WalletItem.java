@@ -54,7 +54,7 @@ public class WalletItem implements CustomItem {
                         CustomItemFlag.PREVENT_CRAFTING)
                 .setItemModel(itemModel())
                 .setMaxStackSize(1)
-                .setTooltipStyle(new NamespacedKey("minecraft", "wallet"))
+                .setTooltipStyle(new NamespacedKey("minevalley", "wallet"))
                 .build();
     }
 
