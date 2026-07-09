@@ -23,7 +23,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class WalletItem implements CustomItem {
 
-    public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
+    public static @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
     public static @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Geldbeutel", TextColor.color(171, 109, 63))
                     .decoration(TextDecoration.ITALIC, false);

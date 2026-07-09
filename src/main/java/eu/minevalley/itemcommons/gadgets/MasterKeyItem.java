@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 @SuppressWarnings("unused")
 public class MasterKeyItem implements CustomItem {
 
-    public static final ItemStack KEY = ItemCommons.core().createItem(Material.NETHER_STAR)
+    public static final ItemStack KEY = ItemCommons.core().createItem(Material.NAUTILUS_SHELL)
             .setDisplayName(Component.text("Universalschlüssel", TextColor.color(70, 178, 224))
                     .decoration(TextDecoration.ITALIC, false))
             .setLore(

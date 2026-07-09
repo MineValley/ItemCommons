@@ -26,7 +26,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class PhoneItem implements CustomItem {
 
-    public static @Nonnull Material MATERIAL = Material.NETHER_STAR;
+    public static @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
     public static @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
