@@ -57,19 +57,14 @@ public class CarKeyItem implements CustomItem {
                       @Nonnull String licencePlate, int keyIndex) {
         this.displayName = Component.text(vehicleType + "schlüssel » ", NamedTextColor.GRAY)
                 .decoration(TextDecoration.ITALIC, false)
-                .append(Component.text(vehicleName, NamedTextColor.YELLOW)
-                        .decoration(TextDecoration.ITALIC, false));
+                .append(Component.text(vehicleName, NamedTextColor.YELLOW));
         this.lore = List.of(
                 Component.text("├ ", NamedTextColor.DARK_GRAY).decoration(TextDecoration.ITALIC, false)
-                        .append(Component.text("Hersteller: ", NamedTextColor.GRAY)
-                                .decoration(TextDecoration.ITALIC, false))
-                        .append(Component.text(manufacturer, NamedTextColor.WHITE)
-                                .decoration(TextDecoration.ITALIC, false)),
+                        .append(Component.text("Hersteller: ", NamedTextColor.GRAY))
+                        .append(Component.text(manufacturer, NamedTextColor.WHITE)),
                 Component.text("└ ", NamedTextColor.DARK_GRAY).decoration(TextDecoration.ITALIC, false)
-                        .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY)
-                                .decoration(TextDecoration.ITALIC, false))
-                        .append(Component.text(licencePlate, NamedTextColor.WHITE)
-                                .decoration(TextDecoration.ITALIC, false)));
+                        .append(Component.text("Kennzeichen: ", NamedTextColor.GRAY))
+                        .append(Component.text(licencePlate, NamedTextColor.WHITE)));
         this.licencePlate = licencePlate;
         this.keyIndex = keyIndex;
     }
