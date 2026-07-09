@@ -74,7 +74,6 @@ public class CarKeyItem implements CustomItem {
         final ItemStack item = ItemCommons.core().createItem(MATERIAL)
                 .setDisplayName(displayName)
                 .setLore(lore)
-                .addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP)
                 .addCustomItemFlags(CustomItemFlag.PREVENT_KEY_DROPPING, CustomItemFlag.PREVENT_CRAFTING)
                 .setItemModel(ITEM_MODEL)
                 .setMaxStackSize(1)
