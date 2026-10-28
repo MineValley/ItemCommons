@@ -15,7 +15,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class AirbagItem implements CustomItem {
 
-    public static final ItemStack AIRBAG_ITEM = ItemCommons.core().createItem(Material.LIGHT_GRAY_WOOL)
+    public static final @Nonnull ItemStack AIRBAG_ITEM = ItemCommons.core().createItem(Material.LIGHT_GRAY_WOOL)
             .setDisplayName("Airbag", NamedTextColor.WHITE)
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(16)

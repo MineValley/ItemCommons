@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class ScrewItem implements CustomItem {
 
-    public static final ItemStack SCREW_ITEM = ItemCommons.core().createItem(Material.STONE)
+    public static final @Nonnull ItemStack SCREW_ITEM = ItemCommons.core().createItem(Material.STONE)
             .setDisplayName("Schraube", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

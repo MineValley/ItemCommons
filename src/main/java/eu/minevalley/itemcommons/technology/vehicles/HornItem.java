@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HornItem implements CustomItem {
 
-    public static final ItemStack HORN_ITEM = ItemCommons.core().createItem(Material.NAUTILUS_SHELL)
+    public static final @Nonnull ItemStack HORN_ITEM = ItemCommons.core().createItem(Material.NAUTILUS_SHELL)
             .setCustomModelData(9)
             .setDisplayName("Hupe", NamedTextColor.WHITE)
             .setMaxStackSize(16)

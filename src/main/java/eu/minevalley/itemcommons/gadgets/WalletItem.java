@@ -23,11 +23,11 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class WalletItem implements CustomItem {
 
-    public static @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
-    public static @Nonnull TextComponent DISPLAY_NAME =
+    public static final @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
+    public static final @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Geldbeutel", TextColor.color(171, 109, 63))
                     .decoration(TextDecoration.ITALIC, false);
-    public static @Nonnull TextComponent[] LORE = new TextComponent[]{
+    public static final @Nonnull TextComponent[] LORE = new TextComponent[]{
             Component.text("Zur sicheren Aufbewahrung deiner Bankkarten", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false),
             Component.text("Wenn du stirbst, können andere Spieler", TextColor.color(171, 90, 79))

@@ -17,7 +17,7 @@ import javax.annotation.Nonnull;
 @RequiredArgsConstructor
 public class TankItem implements CustomItem {
 
-    private static final Material MATERIAL = Material.BARREL;
+    private static final @Nonnull Material MATERIAL = Material.BARREL;
 
     private final int level;
 

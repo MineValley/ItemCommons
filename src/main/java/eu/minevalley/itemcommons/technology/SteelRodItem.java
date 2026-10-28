@@ -12,7 +12,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class SteelRodItem implements CustomItem {
 
-    public static final ItemStack STEEL_ROD_ITEM = new ItemStack(Material.BREEZE_ROD);
+    public static final @Nonnull ItemStack STEEL_ROD_ITEM = new ItemStack(Material.BREEZE_ROD);
 
     @Override
     public @Nonnull ItemStack asItemStack() {

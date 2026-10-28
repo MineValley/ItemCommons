@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class SteeringWheelItem implements CustomItem {
 
-    public static final ItemStack STEERING_WHEEL_ITEM = ItemCommons.core().createItem(Material.STONE)
+    public static final @Nonnull ItemStack STEERING_WHEEL_ITEM = ItemCommons.core().createItem(Material.STONE)
             .setDisplayName("Lenkrad", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

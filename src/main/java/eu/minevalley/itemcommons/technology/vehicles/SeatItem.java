@@ -14,8 +14,8 @@ import javax.annotation.Nonnull;
 @RequiredArgsConstructor
 public class SeatItem implements CustomItem {
 
-    private final static ItemStack LEATHER_SEAT_ITEM = new ItemStack(Material.LEATHER);
-    private final static ItemStack SEAT_ITEM = new ItemStack(Material.OAK_SIGN);
+    private static final @Nonnull ItemStack LEATHER_SEAT_ITEM = new ItemStack(Material.LEATHER);
+    private static final @Nonnull ItemStack SEAT_ITEM = new ItemStack(Material.OAK_SIGN);
 
     private final boolean leather;
 

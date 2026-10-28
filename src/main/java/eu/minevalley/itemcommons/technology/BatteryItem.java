@@ -21,8 +21,8 @@ import javax.annotation.Nonnull;
 @RequiredArgsConstructor
 public class BatteryItem implements CustomItem {
 
-    private static final String SKULL = "d0200b44dd74289044304c26fd7ade4069d7e62c4e9dc5bc14f4c6459e5f8";
-    public static @Nonnull TextComponent DISPLAY_NAME =
+    private static final @Nonnull String SKULL = "d0200b44dd74289044304c26fd7ade4069d7e62c4e9dc5bc14f4c6459e5f8";
+    public static final @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Akku", TextColor.color(212, 101, 93))
                     .decoration(TextDecoration.ITALIC, false);
 

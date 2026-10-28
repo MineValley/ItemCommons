@@ -16,7 +16,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class CarRimItem implements CustomItem {
 
-    public static final ItemStack CAR_RIM_ITEM = ItemCommons.core().createItem("d70752fc4c37d3a39ee68d88372789ed13192d9785a67fa580143aa81ba0c2a3")
+    public static final @Nonnull ItemStack CAR_RIM_ITEM = ItemCommons.core().createItem("d70752fc4c37d3a39ee68d88372789ed13192d9785a67fa580143aa81ba0c2a3")
             .setDisplayName("Felge", NamedTextColor.WHITE)
             .addCustomItemFlags(CustomItemFlag.PREVENT_PLACING)
             .setMaxStackSize(4)

@@ -20,8 +20,8 @@ import java.util.Objects;
 @SuppressWarnings("unused")
 public class CarWheelItem implements CustomItem {
 
-    private static final String SKULL = "ddfe5a963869415340d2cec0f82d08df73dcb168428487b514aa8d4ec19fe2c";
-    private static final TextComponent DISPLAY_NAME = Component.text("Autorad").color(NamedTextColor.WHITE);
+    private static final @Nonnull String SKULL = "ddfe5a963869415340d2cec0f82d08df73dcb168428487b514aa8d4ec19fe2c";
+    private static final @Nonnull TextComponent DISPLAY_NAME = Component.text("Autorad").color(NamedTextColor.WHITE);
 
     public static final ItemStack CAR_WHEEL_NORMAL_ITEM = ItemCommons.core().createItem(SKULL)
             .setDisplayName(DISPLAY_NAME)

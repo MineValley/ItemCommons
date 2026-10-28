@@ -14,7 +14,7 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class LightBulbItem implements CustomItem {
 
-    public static final ItemStack LIGHT_BULB_ITEM = ItemCommons.core().createItem(Material.STONE)
+    public static final @Nonnull ItemStack LIGHT_BULB_ITEM = ItemCommons.core().createItem(Material.STONE)
             .setDisplayName("Glühbirne", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();

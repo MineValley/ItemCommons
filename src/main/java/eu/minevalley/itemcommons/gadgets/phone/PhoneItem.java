@@ -26,11 +26,11 @@ import java.util.Objects;
 @RequiredArgsConstructor
 public class PhoneItem implements CustomItem {
 
-    public static @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
-    public static @Nonnull TextComponent DISPLAY_NAME =
+    public static final @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
+    public static final @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Handy", TextColor.color(135, 184, 199))
                     .decoration(TextDecoration.ITALIC, false);
-    public static @Nonnull TextComponent[] LORE = new TextComponent[]{
+    public static final @Nonnull TextComponent[] LORE = new TextComponent[]{
             Component.text("Installiere dir Apps und", NamedTextColor.GRAY)
                     .decoration(TextDecoration.ITALIC, false),
             Component.text("kommuniziere mit Freunden", NamedTextColor.GRAY)
@@ -60,7 +60,7 @@ public class PhoneItem implements CustomItem {
     public static boolean isPhone(@Nullable ItemStack stack) {
         if (stack == null) return false;
         return stack.getType() == MATERIAL
-               && stack.hasItemMeta()
-               && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
+                && stack.hasItemMeta()
+                && Objects.equals(stack.getItemMeta().displayName(), DISPLAY_NAME);
     }
 }

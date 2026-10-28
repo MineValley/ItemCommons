@@ -9,10 +9,10 @@ import org.bukkit.NamespacedKey;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @SuppressWarnings("unused")
 public enum PhoneScreen {
-    OFF(NamespacedKey.fromString("minevalley:smartphone/off")),
-    HOME(NamespacedKey.fromString("minevalley:smartphone/menu")),
-    INCOMING_CALL(NamespacedKey.fromString("minevalley:smartphone/call")),
-    ACTIVE_CALL(NamespacedKey.fromString("minevalley:smartphone/call_active"));
+    OFF(new NamespacedKey("minevalley", "smartphone/off")),
+    HOME(new NamespacedKey("minevalley","smartphone/menu")),
+    INCOMING_CALL(new NamespacedKey("minevalley","smartphone/call")),
+    ACTIVE_CALL(new NamespacedKey("minevalley","smartphone/call_active"));
 
     private final NamespacedKey itemModel;
 }

@@ -9,7 +9,6 @@ import net.kyori.adventure.text.format.NamedTextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
@@ -24,9 +23,9 @@ import java.util.List;
 public class CarKeyItem implements CustomItem {
 
     public static @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
-    public static final NamespacedKey ITEM_MODEL = NamespacedKey.fromString("minevalley:tool/vehicle/car_key");
-    public static final NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
-    public static final NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
+    public static final @Nonnull NamespacedKey ITEM_MODEL = new NamespacedKey("minevalley", "tool/vehicle/car_key");
+    public static final @Nonnull NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
+    public static final @Nonnull NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
 
     private final @Nonnull Component displayName;
     private final @Nonnull List<Component> lore;

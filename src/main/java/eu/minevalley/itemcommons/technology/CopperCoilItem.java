@@ -22,8 +22,8 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class CopperCoilItem implements CustomItem {
 
-    private static final String SKULL = "b3652284921a2dba440060f2f63aa3ba2b0df62c9c36bf7883acedc336df911b";
-    public static @Nonnull TextComponent DISPLAY_NAME =
+    private static final @Nonnull String SKULL = "b3652284921a2dba440060f2f63aa3ba2b0df62c9c36bf7883acedc336df911b";
+    public static final @Nonnull TextComponent DISPLAY_NAME =
             Component.text("Kupferspule", TextColor.color(95, 104, 117))
                     .decoration(TextDecoration.ITALIC, false);
 
