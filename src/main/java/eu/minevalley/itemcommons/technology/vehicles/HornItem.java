@@ -7,6 +7,7 @@ import eu.minevalley.itemcommons.CustomItem;
 import eu.minevalley.itemcommons.ItemCommons;
 import net.kyori.adventure.text.format.NamedTextColor;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
 import javax.annotation.Nonnull;
@@ -14,8 +15,11 @@ import javax.annotation.Nonnull;
 @SuppressWarnings("unused")
 public class HornItem implements CustomItem {
 
-    public static final @Nonnull ItemStack HORN_ITEM = ItemCommons.core().createItem(Material.NAUTILUS_SHELL)
-            .setCustomModelData(9)
+    public static final @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
+    public static final @Nonnull NamespacedKey ITEM_MODEL = new NamespacedKey("minevalley", "tool/vehicle/horn");
+
+    public static final @Nonnull ItemStack HORN_ITEM = ItemCommons.core().createItem(MATERIAL)
+            .setItemModel(ITEM_MODEL)
             .setDisplayName("Hupe", NamedTextColor.WHITE)
             .setMaxStackSize(16)
             .build();
