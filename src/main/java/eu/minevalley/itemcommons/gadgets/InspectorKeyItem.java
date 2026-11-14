@@ -1,0 +1,51 @@
+package eu.minevalley.itemcommons.gadgets;
+
+import eu.minevalley.core.api.item.CustomItemFlag;
+import eu.minevalley.core.api.user.OnlineUser;
+import eu.minevalley.itemcommons.CustomItem;
+import eu.minevalley.itemcommons.ItemCommons;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
+import org.jetbrains.annotations.Contract;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+@SuppressWarnings("unused")
+public class InspectorKeyItem implements CustomItem {
+
+    public static final @Nonnull Material MATERIAL = Material.NAME_TAG;
+    public static final @Nonnull ItemStack KEY = ItemCommons.core().createItem(MATERIAL)
+            .setDisplayName(Component.text("Inspektionsschlüssel", TextColor.color(70, 178, 224))
+                    .decoration(TextDecoration.ITALIC, false))
+            .setLore(
+                    Component.text("Listet hinterlegte Logeinträge", NamedTextColor.GRAY).decoration(TextDecoration.ITALIC, false),
+                    Component.text("Zum Entfernen, Schlüssel ", NamedTextColor.GRAY).decoration(TextDecoration.ITALIC, false)
+                            .append(Component.text("droppen", NamedTextColor.RED))
+                            .append(Component.text("!", NamedTextColor.GRAY)))
+            .addCustomItemFlags(CustomItemFlag.KEEP_IN_INVENTORY, CustomItemFlag.PREVENT_DROPPING,
+                    CustomItemFlag.PREVENT_CRAFTING, CustomItemFlag.TEMPORARY)
+            .setMaxStackSize(1)
+            .build();
+
+    @Override
+    public @Nonnull ItemStack asItemStack() {
+        return KEY.clone();
+    }
+
+    @Contract(value = "null -> false", pure = true)
+    public static boolean isInspectorKey(@Nullable ItemStack stack) {
+        if (stack == null) return false;
+        return KEY.isSimilar(stack);
+    }
+
+    public static boolean isHoldingInspectorKey(@Nonnull OnlineUser user) {
+        if (!user.isTeamler()) return false;
+        if (!user.team().isAllowedToUseGeneralKey()) return false;
+        return isInspectorKey(user.player().getInventory().getItemInMainHand());
+    }
+}
