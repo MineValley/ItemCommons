@@ -17,7 +17,7 @@ import javax.annotation.Nonnull;
 public class BlueLightItem implements CustomItem {
 
     public static final @Nonnull Material MATERIAL = Material.NAUTILUS_SHELL;
-    public static final @Nonnull NamespacedKey ITEM_MODEL_OFF = new NamespacedKey("minevalley", "tool/vehicle/siren_of");
+    public static final @Nonnull NamespacedKey ITEM_MODEL_OFF = new NamespacedKey("minevalley", "tool/vehicle/siren_off");
     public static final @Nonnull NamespacedKey ITEM_MODEL_ON = new NamespacedKey("minevalley", "tool/vehicle/siren_on");
     public static final @Nonnull NamespacedKey KEY_LICENCE_PLATE = new NamespacedKey("minevalley", "licence_plate");
     public static final @Nonnull NamespacedKey KEY_KEY_INDEX = new NamespacedKey("minevalley", "key_index");
